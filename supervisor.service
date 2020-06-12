@@ -1,0 +1,16 @@
+[Unit]
+Description=Supervisor daemon
+Wants=network-online.target
+After=network-online.target
+
+
+[Service]
+Type=simple
+ExecStart=supervisord  -n -c /etc/supervisor/supervisord.conf
+ExecStop=supervisorctl shutdown
+ExecReload=supervisorctl reload
+Restart=on-failure
+RestartSec=8s
+
+[Install]
+WantedBy=multi-user.target
