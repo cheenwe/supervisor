@@ -6,7 +6,7 @@ Supervisor是一个c/s架构的进程管理工具，提供web页面管理及xmlr
 ### 安装
 
 ```
-git clone https://github.com/cheenwe/supervisor /opt/
+git clone https://github.com/cheenwe/supervisor /opt/supervisor
 cd /opt/supervisor
 pip install supervisor-4.2.1-py2.py3-none-any.whl
 ## 设置 supervisor 开机启动
