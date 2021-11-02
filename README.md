@@ -9,9 +9,12 @@ Supervisor是一个c/s架构的进程管理工具，提供web页面管理及xmlr
 git clone https://github.com/cheenwe/supervisor /opt/supervisor
 cd /opt/supervisor
 pip install supervisor-4.2.1-py2.py3-none-any.whl
+
+sudo ln -sf /opt/supervisor/supervisord.conf /etc/
 ## 设置 supervisor 开机启动
 sudo cp supervisor.service  /lib/systemd/system/
 sudo systemctl enable --now supervisor.service  
+
 ```
 
 ### 访问服务
@@ -22,6 +25,7 @@ http://127.0.0.1:9001
 用户名： admin
 密码： admin2020
 ```
+
 可在 supervisor.conf 文件中修改端口及用户名密码。
 
 

@@ -9,6 +9,10 @@ Type=simple
 ExecStart=/usr/local/bin/supervisord  -n -c /opt/supervisor/supervisor.conf
 ExecStop=/usr/local/bin/supervisorctl shutdown
 ExecReload=/usr/local/bin/supervisorctl reload
+
+#ExecStart=/opt/miniconda3/bin/supervisord  -n -c /opt/supervisor/supervisord.conf
+#ExecStop=/opt/miniconda3/bin/supervisorctl shutdown
+#ExecReload=/opt/miniconda3/bin/supervisorctl reload
 Restart=on-failure
 RestartSec=8s
 
