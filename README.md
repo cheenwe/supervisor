@@ -1,14 +1,18 @@
 ## supervisor
 
 Supervisor是一个c/s架构的进程管理工具，提供web页面管理及xmlrpc接口，能对进程进行自动重启等操作。
-适用于对项目中多个服务进行统一管理。文档： http://www.supervisord.org/
+适用于对项目中多个服务进行统一管理。文档： http://www.supervisord.org
+
+本项目基于原来服务增加了文件上传的功能,支持将文件上传到指定配置的目录
 
 ### 安装
 
 ```
 git clone https://github.com/cheenwe/supervisor /opt/supervisor
 cd /opt/supervisor
-pip install supervisor-4.2.1-py2.py3-none-any.whl
+pip install supervisor-4.4.0.dev0-py2.py3-none-any.whl
+
+mkdir /opt/supervisor/apps
 
 sudo ln -sf /opt/supervisor/supervisord.conf /etc/
 ## 设置 supervisor 开机启动
@@ -19,7 +23,7 @@ sudo systemctl enable --now supervisor.service
 
 ### 访问服务
 
-http://127.0.0.1:9001
+http://127.0.0.1:9991
 
 ```
 用户名： admin
@@ -43,7 +47,7 @@ service supervisor restart
 supervisorctl status issh # 查看 ssh 服务状态
 supervisorctl start issh
 supervisorctl stop issh
-supervisorctl reload： 重新启动配置中的所有程序
+supervisorctl reload # 重新启动配置中的所有程序
 supervisorctl update # 配置文件修改后,重新加载配置
 ```
 

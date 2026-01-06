@@ -6,7 +6,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/supervisord  -n -c /opt/supervisor/supervisor.conf
+ExecStart=/usr/local/bin/supervisord  -n -c /opt/supervisor/supervisord.conf
 ExecStop=/usr/local/bin/supervisorctl shutdown
 ExecReload=/usr/local/bin/supervisorctl reload
 
