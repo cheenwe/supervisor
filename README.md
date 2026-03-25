@@ -12,12 +12,13 @@ git clone https://github.com/cheenwe/supervisor /opt/supervisor
 cd /opt/supervisor
 pip install supervisor-4.4.0.dev0-py2.py3-none-any.whl
 
-mkdir /opt/supervisor/apps
-
 sudo ln -sf /opt/supervisor/supervisord.conf /etc/
+
+## 然后修改 config目录下的启动配置文件和bin下面的启动脚本
+
 ## 设置 supervisor 开机启动
-sudo cp supervisor.service  /lib/systemd/system/
-sudo systemctl enable --now supervisor.service  
+sudo cp supervisord.service  /lib/systemd/system/
+sudo systemctl enable --now supervisord.service  
 
 ```
 
